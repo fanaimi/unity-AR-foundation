@@ -14,10 +14,10 @@ public class TapToPlace : MonoBehaviour
     private ARRaycastManager m_raycastManager;
     private static List<ARRaycastHit> m_hits = new List<ARRaycastHit>();
 
-    // Start is called before the first frame update
+    
     void Start()
     {
-        
+        m_raycastManager = GetComponent<ARRaycastManager>();
     }
 
     // Update is called once per frame
@@ -37,14 +37,18 @@ public class TapToPlace : MonoBehaviour
                 // we save what raycasts hit on a List named m_hits
                 // Trackable is anything that the phone can track
                 // PlaneWithinPolygon refers to the planes we have detected
+                // M_hits are stored by distance, m_hits[0] will be the closest one
                 if ( m_raycastManager.Raycast(m_touchPos, m_hits, TrackableType.PlaneWithinPolygon))
                 {
-                   
+                    var m_hitPose = m_hits[0].pose;
+                    
+                    // instantiating
+                    m_spawnedRobot = Instantiate(
+                        m_robotPrefab,
+                        m_hitPose.position,
+                        m_robotPrefab.transform.rotation
+                    );
                 }
-            }
-            else
-            {
-                
             } // spawnedRobot
 
         }// touchCount

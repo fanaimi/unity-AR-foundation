@@ -690,6 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdea2a71305dd3341bf876c95a886955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_robotPrefab: {fileID: 1991382680834320966, guid: 995d611c2ae3b3843a2fadec5a63cb94, type: 3}
 --- !u!114 &1662343245
 MonoBehaviour:
   m_ObjectHideFlags: 0

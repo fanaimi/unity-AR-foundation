@@ -28,7 +28,7 @@ public class DebugManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Echo("we are live");
+       // Echo("we are live");
     }
 
     // Update is called once per frame

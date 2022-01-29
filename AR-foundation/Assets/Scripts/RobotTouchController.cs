@@ -35,7 +35,9 @@ public class RobotTouchController : MonoBehaviour
         if (m_joystick.Direction.magnitude > m_deadZone)
         // if (active)
         {
-            Debug.Log("joystick moving");
+            // Debug.Log("joystick moving");
+            DebugManager.Instance.Echo("joystick moving");
+            DebugManager.Instance.Echo($"{m_joystick.Direction}");
            m_rb.AddForce(transform.forward * m_moveSpeed);
            m_robotAnim.SetBool("Walk_Anim", true);
         }

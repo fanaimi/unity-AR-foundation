@@ -6,22 +6,41 @@ public class CanonTower : MonoBehaviour
 {
 
     [SerializeField] private float m_turnSpeed = 40f;
+    [SerializeField] private Rigidbody m_canonBallPrefab;
+    [SerializeField] private Transform m_spawnPoint;
+    [SerializeField] private float m_shootingForce;
     
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        
-    }
+        InvokeRepeating("ShootAtPlayer", 3f, 5f);
+    } // OnEnable
 
-    // Update is called once per frame
+    
+    
     void Update()
     {
         RotateTowardsPlayer();
-    }
+        
+    } // Update
+
+    
+    /// <summary>
+    /// shooting cannon balls towards player
+    /// </summary>
+    private void  ShootAtPlayer()
+    {
+        if (GetRobotPlayer())
+        {
+            Rigidbody m_canonBall = Instantiate(m_canonBallPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
+            m_canonBall.AddForce(m_canonBall.transform.forward * m_shootingForce);
+            Destroy(m_canonBall, 3f);
+        }
+    } // ShootAtPlayer
 
 
+    /// <summary>
+    /// rotating tower around Y axis towards the player
+    /// </summary>
     private void RotateTowardsPlayer()
     {
         if (!GetRobotPlayer())
@@ -34,13 +53,20 @@ public class CanonTower : MonoBehaviour
             Quaternion m_lookRotation = Quaternion.LookRotation(m_targetDirection);
             Vector3 m_rotation =
                 Quaternion.Lerp(
-                    transform.position,
+                    transform.rotation,
                     m_lookRotation,
-                    Time.deltaTime * m_turnSpeed).eulerAngles;
+                    Time.deltaTime * m_turnSpeed
+                ).eulerAngles;
+            
+            transform.rotation = Quaternion.Euler(0f, m_rotation.y, 0f);
         }
     } // RotateTowardsPlayer
 
 
+    /// <summary>
+    /// finding robot player in scene
+    /// </summary>
+    /// <returns>m_robotPlayer</returns>
     private GameObject GetRobotPlayer()
     {
         RobotTouchController m_robotPlayer = FindObjectOfType<RobotTouchController>();

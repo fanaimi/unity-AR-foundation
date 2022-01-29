@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3952332835875804097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5050265629486778833}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5050265629486778833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952332835875804097}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.67, z: 3.47}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 7881142022294133803}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7881142022293688511
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +355,7 @@ Transform:
   m_Children:
   - {fileID: 7881142022294120799}
   - {fileID: 7881142022294156229}
+  - {fileID: 5050265629486778833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -340,6 +371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddf0a3d059a09e4f965d6d26e2fed2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_turnSpeed: 30
+  m_canonBallPrefab: {fileID: 1287036408180652189, guid: 3f2283382f06da84e8c17e7965e6c02e, type: 3}
+  m_spawnPoint: {fileID: 5050265629486778833}
+  m_shootingForce: 90
 --- !u!1 &7881142022293910087
 GameObject:
   m_ObjectHideFlags: 0

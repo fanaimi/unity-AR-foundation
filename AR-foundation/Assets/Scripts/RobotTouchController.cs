@@ -9,6 +9,7 @@ public class RobotTouchController : MonoBehaviour
 
     [SerializeField] private float m_moveSpeed;
     [SerializeField] private float m_turnSpeed;
+    [SerializeField] private float m_jumpSpeed;
     private float m_deadZone = .2f;
     private Animator m_robotAnim;
     
@@ -16,7 +17,7 @@ public class RobotTouchController : MonoBehaviour
     // [SerializeField] 
     private Joystick m_joystick;
 
-    private bool active = false;
+    private bool m_jumping  = false;
 
     // will be triggered when the object is instantiated 
     private void OnEnable()
@@ -24,7 +25,6 @@ public class RobotTouchController : MonoBehaviour
         m_joystick = FindObjectOfType<Joystick>();
         m_robotAnim = GetComponent<Animator>();
         m_rb = GetComponent<Rigidbody>();
-        //active = true;
     }
 
     // Update is called once per frame
@@ -33,11 +33,7 @@ public class RobotTouchController : MonoBehaviour
         // Debug.Log("joystick moving");
         // hamdling movements - Joystick magnitude > dead zone
         if (m_joystick.Direction.magnitude > m_deadZone)
-        // if (active)
         {
-            // Debug.Log("joystick moving");
-            DebugManager.Instance.Echo("joystick moving");
-            DebugManager.Instance.Echo($"{m_joystick.Direction}");
            m_rb.AddForce(transform.forward * m_moveSpeed);
            m_robotAnim.SetBool("Walk_Anim", true);
         }
@@ -64,6 +60,17 @@ public class RobotTouchController : MonoBehaviour
         
 
     }
+
+
+    public void Jump()
+    {
+        m_jumping = true;
+        DebugManager.Instance.Echo("jump button was pressed");
+        
+        m_rb.AddForce(transform.up * m_jumpSpeed);
+    }
+
+
 }
 
 

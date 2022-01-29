@@ -22,7 +22,7 @@ public class DebugManager : MonoBehaviour
 
     public void Echo(string msg)
     {
-        m_DebugMsg.text = msg.ToString();
+        m_DebugMsg.text += $"{msg.ToString()} \n";
     }
 
     // Start is called before the first frame update

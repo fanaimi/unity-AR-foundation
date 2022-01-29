@@ -65,56 +65,11 @@ public class RobotTouchController : MonoBehaviour
     public void Jump()
     {
         m_jumping = true;
-        DebugManager.Instance.Echo("jump button was pressed");
+        // DebugManager.Instance.Echo("jump button was pressed");
         
-        m_rb.AddForce(transform.up * m_jumpSpeed);
+        // m_rb.AddForce(transform.up * m_jumpSpeed);
     }
 
 
 }
 
-
-/*
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-public class RobotTouchController : MonoBehaviour
-{
-    public float moveSpeed;
-    public float turnSpeed;
-    public float deadZone = 0.2f;
-
-    private Animator robotAnim;
-    private Rigidbody robotRB;
-    private Joystick joystick;
-    
-    void OnEnable()
-    {
-        joystick = FindObjectOfType<Joystick>();
-        robotAnim = GetComponent<Animator>();
-        robotRB = GetComponent<Rigidbody>();
-    }
-
-    
-    void Update()
-    {
-        // handle movement
-        if (joystick.Direction.magnitude >= deadZone)
-        {
-            robotRB.AddForce(transform.forward * moveSpeed);
-            robotAnim.SetBool("Walk_Anim", true);
-        }
-        else
-        {
-            // idling
-            robotAnim.SetBool("Walk_Anim", false);
-        }
-
-        // handle rotation
-        Vector3 targetDirection = new Vector3(joystick.Direction.x, 0, joystick.Direction.y);
-        Vector3 direction = Vector3.RotateTowards(transform.forward, targetDirection, Time.deltaTime * turnSpeed, 0.0f);
-        transform.rotation = Quaternion.LookRotation(direction);
-    }
-}*/

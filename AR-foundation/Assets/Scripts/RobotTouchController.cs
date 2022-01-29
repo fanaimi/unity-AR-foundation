@@ -9,7 +9,7 @@ public class RobotTouchController : MonoBehaviour
 
     [SerializeField] private float m_moveSpeed;
     [SerializeField] private float m_turnSpeed;
-    private float m_deadZone = .02f;
+    private float m_deadZone = .2f;
     private Animator m_robotAnim;
     
     private Rigidbody m_rb;
@@ -24,7 +24,7 @@ public class RobotTouchController : MonoBehaviour
         m_joystick = FindObjectOfType<Joystick>();
         m_robotAnim = GetComponent<Animator>();
         m_rb = GetComponent<Rigidbody>();
-        active = true;
+        //active = true;
     }
 
     // Update is called once per frame

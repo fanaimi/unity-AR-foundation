@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5663802894976705718
+  m_GuidHigh: 18065512524414686889
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5453716069112433773
+      m_GuidHigh: 15709169094462111159
+    m_SerializedTextureGuid:
+      m_GuidLow: 14147055086228369342
+      m_GuidHigh: 17046742656447940842
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: ttsl-card
+    m_Texture: {fileID: 0}

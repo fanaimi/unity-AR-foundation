@@ -71,5 +71,9 @@ public class RobotTouchController : MonoBehaviour
     }
 
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.LoseLives();
+    }
 }
 

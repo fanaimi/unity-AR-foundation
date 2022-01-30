@@ -7,13 +7,17 @@ public class CanonBall : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        DebugManager.Instance.Echo("ball hit something");
-        RobotTouchController m_robotPlayer = other.collider.GetComponent<RobotTouchController>();
-
-        if (m_robotPlayer)
+        if (other.collider.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            DebugManager.Instance.Echo("ball hit player");
+            RobotTouchController m_robotPlayer = other.collider.GetComponent<RobotTouchController>();
+
+            // if (m_robotPlayer)
+            if (true)
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 

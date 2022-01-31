@@ -65,9 +65,10 @@ public class RobotTouchController : MonoBehaviour
     public void Jump()
     {
         m_jumping = true;
-        // DebugManager.Instance.Echo("jump button was pressed");
+        DebugManager.Instance.Echo("jump button was pressed");
         
         // m_rb.AddForce(transform.up * m_jumpSpeed);
+        m_rb.velocity = Vector3.up * 500; 
     }
 
 

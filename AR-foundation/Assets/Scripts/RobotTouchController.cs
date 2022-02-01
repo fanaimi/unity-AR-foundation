@@ -17,7 +17,7 @@ public class RobotTouchController : MonoBehaviour
     // [SerializeField] 
     private Joystick m_joystick;
 
-    private bool m_jumping  = false;
+    // private bool m_jumping  = false;
 
     // will be triggered when the object is instantiated 
     private void OnEnable()
@@ -28,7 +28,7 @@ public class RobotTouchController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Debug.Log("joystick moving");
         // hamdling movements - Joystick magnitude > dead zone
@@ -57,18 +57,25 @@ public class RobotTouchController : MonoBehaviour
         );
         
         transform.rotation = Quaternion.LookRotation(m_direction);
-        
+
+        /*
+        if (m_jumping)
+        {
+            DebugManager.Instance.Echo("update jumping");
+        }*/
+
 
     }
 
 
     public void Jump()
     {
-        m_jumping = true;
+        //m_jumping = true;
         DebugManager.Instance.Echo("jump button was pressed");
         
-        // m_rb.AddForce(transform.up * m_jumpSpeed);
-        m_rb.velocity = Vector3.up * 500; 
+        DebugManager.Instance.Echo("adding force");
+        m_rb.AddForce(Vector3.up * m_jumpSpeed, ForceMode.Impulse);
+        // m_rb.velocity = Vector3.up * 500; 
     }
 
 

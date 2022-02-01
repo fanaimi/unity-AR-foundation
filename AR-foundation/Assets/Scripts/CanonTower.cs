@@ -33,7 +33,7 @@ public class CanonTower : MonoBehaviour
         {
             Rigidbody m_canonBall = Instantiate(m_canonBallPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
             m_canonBall.AddForce(m_canonBall.transform.forward * m_shootingForce);
-            Destroy(m_canonBall, 3f);
+            Destroy(m_canonBall.gameObject, 3f);
         }
     } // ShootAtPlayer
 

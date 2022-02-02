@@ -1691,19 +1691,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2004784588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1992738885083317094, guid: 995d611c2ae3b3843a2fadec5a63cb94, type: 3}
-        m_TargetAssemblyTypeName: RobotTouchController, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2004784588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,7 +1737,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004784585}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e41d4d32eb4e22b4eaacc6944ed2caf9, type: 3}
   m_Name: 

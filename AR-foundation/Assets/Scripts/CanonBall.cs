@@ -7,7 +7,7 @@ public class CanonBall : MonoBehaviour
 {
     
 
-    private void OnXCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {

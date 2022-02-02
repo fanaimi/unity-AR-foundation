@@ -18,11 +18,17 @@ public class RobotTouchController : MonoBehaviour
     // [SerializeField] 
     private Joystick m_joystick;
 
+    [SerializeField] private GameObject m_Flames;
+    [SerializeField] private GameObject m_Shield;
+    
 
-    public Button m_jumpButton;
-    public Button m_shieldButton;
-    public Button m_flameButton;
-    public Button m_accelerateButton;
+    private bool m_ThrowingFlames = false;
+    
+    
+    private Button m_jumpButton;
+    private Button m_shieldButton;
+    private Button m_flameButton;
+    private Button m_accelerateButton;
 
     // private bool m_jumping  = false;
 
@@ -46,7 +52,7 @@ public class RobotTouchController : MonoBehaviour
         
         m_jumpButton.onClick.AddListener(Jump);
         m_shieldButton.onClick.AddListener(AddShield);
-        m_flameButton.onClick.AddListener(ThrowFlames);
+        m_flameButton.onClick.AddListener(ToggleFlames);
         m_accelerateButton.onClick.AddListener(Accelerate);
     } // SetUpButtons
 
@@ -82,6 +88,8 @@ public class RobotTouchController : MonoBehaviour
         
         transform.rotation = Quaternion.LookRotation(m_direction);
 
+        ThrowFlames();
+
     }
 
 
@@ -89,13 +97,16 @@ public class RobotTouchController : MonoBehaviour
     {
         //DebugManager.Instance.Echo("jump button was pressed");
         
-        DebugManager.Instance.Echo("jumping");
+        // DebugManager.Instance.Echo("jumping");
         m_rb.AddForce(transform.up * m_jumpSpeed, ForceMode.Impulse);
     }
 
+    private bool m_IsShieldActive = false;
     private void AddShield()
     {
-        DebugManager.Instance.Echo("shielding");
+        m_IsShieldActive = !m_IsShieldActive;
+        //DebugManager.Instance.Echo("shielding");
+        m_Shield.SetActive(m_IsShieldActive);
     } // AddShield
     
     
@@ -105,12 +116,27 @@ public class RobotTouchController : MonoBehaviour
     } // Accelerate
     
     
-    private void ThrowFlames()
+    private void ToggleFlames()
     {
         // https://www.youtube.com/results?search_query=unity+flamethrower+particle+effect+
-        DebugManager.Instance.Echo("throwing flames");
-    } // ThrowFlames
+        // DebugManager.Instance.Echo("throwing flames");
+        m_ThrowingFlames = !m_ThrowingFlames;
+    } // ToggleFlames
 
+
+    private void ThrowFlames()
+    {
+        if (m_ThrowingFlames)
+        {
+            // DebugManager.Instance.Echo("throwing flames");
+            m_Flames.SetActive(true);
+        }
+        else
+        {
+            // DebugManager.Instance.Echo("stopping flames");
+            m_Flames.SetActive(false);
+        }
+    }
 
     private void OnDestroy()
     {

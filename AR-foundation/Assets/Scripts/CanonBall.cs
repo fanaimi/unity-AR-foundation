@@ -20,5 +20,11 @@ public class CanonBall : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+
+        if (collision.collider.CompareTag("Flames"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

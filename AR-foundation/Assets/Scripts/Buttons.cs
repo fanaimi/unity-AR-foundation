@@ -10,7 +10,10 @@ public class Buttons : MonoBehaviour
     private static Buttons _instance;
     public static Buttons Instance { get { return _instance; } }
 
-    public Button m_jumpBtn;
+    public Button m_jumpButton;
+    public Button m_shieldButton;
+    public Button m_flameButton;
+    public Button m_accelerateButton;
     
     
     
@@ -24,15 +27,4 @@ public class Buttons : MonoBehaviour
         }
     }
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

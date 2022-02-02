@@ -19,7 +19,10 @@ public class RobotTouchController : MonoBehaviour
     private Joystick m_joystick;
 
 
-    private Button m_jumpBtutton;
+    public Button m_jumpButton;
+    public Button m_shieldButton;
+    public Button m_flameButton;
+    public Button m_accelerateButton;
 
     // private bool m_jumping  = false;
 
@@ -30,13 +33,23 @@ public class RobotTouchController : MonoBehaviour
         m_robotAnim = GetComponent<Animator>();
         m_rb = GetComponent<Rigidbody>();
 
-        m_jumpBtutton = Buttons.Instance.m_jumpBtn;
-        m_jumpBtutton.onClick.AddListener(Jump);
+        SetUpButtons();
 
     }
-    
-    
-    
+
+    private void SetUpButtons()
+    {
+        m_jumpButton      = Buttons.Instance.m_jumpButton;
+        m_shieldButton     = Buttons.Instance.m_shieldButton;
+        m_flameButton      = Buttons.Instance.m_flameButton;
+        m_accelerateButton = Buttons.Instance.m_accelerateButton;
+        
+        m_jumpButton.onClick.AddListener(Jump);
+        m_shieldButton.onClick.AddListener(AddShield);
+        m_flameButton.onClick.AddListener(ThrowFlames);
+        m_accelerateButton.onClick.AddListener(Accelerate);
+    } // SetUpButtons
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -76,9 +89,27 @@ public class RobotTouchController : MonoBehaviour
     {
         //DebugManager.Instance.Echo("jump button was pressed");
         
-        DebugManager.Instance.Echo("adding force");
+        DebugManager.Instance.Echo("jumping");
         m_rb.AddForce(transform.up * m_jumpSpeed, ForceMode.Impulse);
     }
+
+    private void AddShield()
+    {
+        DebugManager.Instance.Echo("shielding");
+    } // AddShield
+    
+    
+    private void Accelerate()
+    {
+        DebugManager.Instance.Echo("accelerate");
+    } // Accelerate
+    
+    
+    private void ThrowFlames()
+    {
+        // https://www.youtube.com/results?search_query=unity+flamethrower+particle+effect+
+        DebugManager.Instance.Echo("throwing flames");
+    } // ThrowFlames
 
 
     private void OnDestroy()

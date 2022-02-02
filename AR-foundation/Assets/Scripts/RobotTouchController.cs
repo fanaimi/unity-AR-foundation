@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RobotTouchController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class RobotTouchController : MonoBehaviour
     // [SerializeField] 
     private Joystick m_joystick;
 
+
+    private Button m_jumpBtutton;
+
     // private bool m_jumping  = false;
 
     // will be triggered when the object is instantiated 
@@ -25,7 +29,14 @@ public class RobotTouchController : MonoBehaviour
         m_joystick = FindObjectOfType<Joystick>();
         m_robotAnim = GetComponent<Animator>();
         m_rb = GetComponent<Rigidbody>();
+
+        m_jumpBtutton = Buttons.Instance.m_jumpBtn;
+        m_jumpBtutton.onClick.AddListener(Jump);
+
     }
+    
+    
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -58,24 +69,15 @@ public class RobotTouchController : MonoBehaviour
         
         transform.rotation = Quaternion.LookRotation(m_direction);
 
-        /*
-        if (m_jumping)
-        {
-            DebugManager.Instance.Echo("update jumping");
-        }*/
-
-
     }
 
 
     public void Jump()
     {
-        //m_jumping = true;
-        DebugManager.Instance.Echo("jump button was pressed");
+        //DebugManager.Instance.Echo("jump button was pressed");
         
         DebugManager.Instance.Echo("adding force");
-        m_rb.AddForce(Vector3.up * m_jumpSpeed, ForceMode.Impulse);
-        // m_rb.velocity = Vector3.up * 500; 
+        m_rb.AddForce(transform.up * m_jumpSpeed, ForceMode.Impulse);
     }
 
 

@@ -1621,6 +1621,7 @@ GameObject:
   - component: {fileID: 2004784589}
   - component: {fileID: 2004784588}
   - component: {fileID: 2004784587}
+  - component: {fileID: 2004784590}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -1741,6 +1742,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004784585}
   m_CullTransparentMesh: 1
+--- !u!114 &2004784590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004784585}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41d4d32eb4e22b4eaacc6944ed2caf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_jumpBtn: {fileID: 2004784587}
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0

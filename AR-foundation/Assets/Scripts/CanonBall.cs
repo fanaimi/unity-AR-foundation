@@ -28,5 +28,17 @@ public class CanonBall : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.CompareTag("Shield"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

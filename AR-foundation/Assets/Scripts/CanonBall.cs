@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CanonBall : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject m_Explosion;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,6 +16,8 @@ public class CanonBall : MonoBehaviour
 
             if (m_robotPlayer)
             {
+                AudioManager.instance.Play("explosion");
+                Instantiate(m_Explosion, collision.gameObject.transform.position, Quaternion.identity);
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             }

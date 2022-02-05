@@ -11,14 +11,18 @@ public class CanonBall : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            DebugManager.Instance.Echo("Player hit");
             RobotTouchController m_robotPlayer = collision.collider.GetComponent<RobotTouchController>();
 
             if (m_robotPlayer && !m_robotPlayer.m_IsShieldActive)
             {
+                // DebugManager.Instance.Echo("Player hit");
                 AudioManager.instance.Play("explosion");
                 Instantiate(m_Explosion, collision.gameObject.transform.position, Quaternion.identity);
                 Destroy(collision.gameObject);
+                Destroy(gameObject);
+            } else if (m_robotPlayer && m_robotPlayer.m_IsShieldActive)
+            {
+                AudioManager.instance.Play("buzz");
                 Destroy(gameObject);
             }
         }

@@ -2369,5 +2369,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3916388336994772341, guid: 08ade8b0c4f7ab741aae09696599c993, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916388336994772341, guid: 08ade8b0c4f7ab741aae09696599c993, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e6f890b028fa044187ea62a1994f771, type: 3}
+    - target: {fileID: 3916388336994772341, guid: 08ade8b0c4f7ab741aae09696599c993, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: buzz
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916388336994772341, guid: 08ade8b0c4f7ab741aae09696599c993, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916388336994772341, guid: 08ade8b0c4f7ab741aae09696599c993, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ade8b0c4f7ab741aae09696599c993, type: 3}

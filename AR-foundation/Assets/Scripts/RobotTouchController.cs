@@ -30,6 +30,9 @@ public class RobotTouchController : MonoBehaviour
     private Button m_flameButton;
     private Button m_accelerateButton;
 
+    
+    public bool m_IsShieldActive = false;
+
     // private bool m_jumping  = false;
 
     // will be triggered when the object is instantiated 
@@ -101,7 +104,6 @@ public class RobotTouchController : MonoBehaviour
         m_rb.AddForce(transform.up * m_jumpSpeed, ForceMode.Impulse);
     }
 
-    private bool m_IsShieldActive = false;
     private void AddShield()
     {
         m_IsShieldActive = !m_IsShieldActive;

@@ -14,7 +14,7 @@ public class CanonBall : MonoBehaviour
             DebugManager.Instance.Echo("Player hit");
             RobotTouchController m_robotPlayer = collision.collider.GetComponent<RobotTouchController>();
 
-            if (m_robotPlayer)
+            if (m_robotPlayer && !m_robotPlayer.m_IsShieldActive)
             {
                 AudioManager.instance.Play("explosion");
                 Instantiate(m_Explosion, collision.gameObject.transform.position, Quaternion.identity);
@@ -33,12 +33,4 @@ public class CanonBall : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-        if (other.CompareTag("Shield"))
-        {
-            Destroy(gameObject);
-        }
-    }
 }

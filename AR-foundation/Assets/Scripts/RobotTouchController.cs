@@ -63,7 +63,9 @@ public class RobotTouchController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Debug.Log("joystick moving");
+        
+        Debug.Log(transform.position.y);
+        Debug.Log("123");
         // hamdling movements - Joystick magnitude > dead zone
         if (m_joystick.Direction.magnitude > m_deadZone)
         {

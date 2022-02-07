@@ -335,9 +335,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7881142022294133803}
   - component: {fileID: 5184186772296657491}
+  - component: {fileID: 573623421749679480}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Player
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,6 +376,19 @@ MonoBehaviour:
   m_canonBallPrefab: {fileID: 1287036408180652189, guid: 3f2283382f06da84e8c17e7965e6c02e, type: 3}
   m_spawnPoint: {fileID: 5050265629486778833}
   m_shootingForce: 90
+--- !u!65 &573623421749679480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881142022293908397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.138157, y: 9.273206, z: 4.030136}
+  m_Center: {x: -0.067056715, y: 4.1366024, z: 0.025523826}
 --- !u!1 &7881142022293910087
 GameObject:
   m_ObjectHideFlags: 0

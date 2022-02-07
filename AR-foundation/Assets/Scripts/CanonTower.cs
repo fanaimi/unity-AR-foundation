@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -82,4 +83,10 @@ public class CanonTower : MonoBehaviour
     } // GetRobotPlayer
 
 
+    public void HitByFlame()
+    {
+        DebugManager.Instance.Echo("hit by flame!");
+    }
+
+   
 }

@@ -64,13 +64,14 @@ public class RobotTouchController : MonoBehaviour
     void FixedUpdate()
     {
         
-        Debug.Log(transform.position.y);
-        Debug.Log("123");
+       // Debug.Log(transform.position.y);
+        // Debug.Log("123");
         // hamdling movements - Joystick magnitude > dead zone
         if (m_joystick.Direction.magnitude > m_deadZone)
         {
-           m_rb.AddForce(transform.forward * m_moveSpeed);
-           m_robotAnim.SetBool("Walk_Anim", true);
+            //Debug.Log(transform.position.y);
+            m_rb.AddForce(transform.forward * m_moveSpeed);
+            m_robotAnim.SetBool("Walk_Anim", true);
         }
         else
         {

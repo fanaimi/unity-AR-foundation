@@ -23,12 +23,14 @@ public class RobotTouchController : MonoBehaviour
     
 
     private bool m_ThrowingFlames = false;
+
+    private Vector3 m_originalPosition; 
     
     
     private Button m_jumpButton;
     private Button m_shieldButton;
     private Button m_flameButton;
-    private Button m_accelerateButton;
+    private Button m_repositionButton;
 
     
     public bool m_IsShieldActive = false;
@@ -43,7 +45,7 @@ public class RobotTouchController : MonoBehaviour
         m_rb = GetComponent<Rigidbody>();
 
         SetUpButtons();
-
+        m_originalPosition = transform.position;
     }
 
     private void SetUpButtons()
@@ -51,12 +53,12 @@ public class RobotTouchController : MonoBehaviour
         m_jumpButton      = Buttons.Instance.m_jumpButton;
         m_shieldButton     = Buttons.Instance.m_shieldButton;
         m_flameButton      = Buttons.Instance.m_flameButton;
-        m_accelerateButton = Buttons.Instance.m_accelerateButton;
+        m_repositionButton = Buttons.Instance.m_repositionButton;
         
         m_jumpButton.onClick.AddListener(Jump);
         m_shieldButton.onClick.AddListener(AddShield);
         m_flameButton.onClick.AddListener(ToggleFlames);
-        m_accelerateButton.onClick.AddListener(Accelerate);
+        m_repositionButton.onClick.AddListener(Reposition);
     } // SetUpButtons
 
 
@@ -115,9 +117,10 @@ public class RobotTouchController : MonoBehaviour
     } // AddShield
     
     
-    private void Accelerate()
+    private void Reposition()
     {
-        DebugManager.Instance.Echo("accelerate");
+        DebugManager.Instance.Echo("Reposition");
+        transform.position = m_originalPosition;
     } // Accelerate
     
     

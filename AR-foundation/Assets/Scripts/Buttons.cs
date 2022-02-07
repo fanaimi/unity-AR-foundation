@@ -13,7 +13,7 @@ public class Buttons : MonoBehaviour
     public Button m_jumpButton;
     public Button m_shieldButton;
     public Button m_flameButton;
-    public Button m_accelerateButton;
+    public Button m_repositionButton;
     
     
     

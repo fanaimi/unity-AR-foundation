@@ -5,14 +5,23 @@ using UnityEngine;
 
 public class CanonTower : MonoBehaviour
 {
-
+    // https://www.youtube.com/watch?v=BLfNP4Sc_iA&ab_channel=Brackeys
     [SerializeField] private float m_turnSpeed = 40f;
     [SerializeField] private Rigidbody m_canonBallPrefab;
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_shootingForce;
+    [SerializeField] private int m_FlameDamage = 5;
+    [SerializeField] private HealthBar m_TowerHealthBar;
+  
+    private int m_MaxHealth;
+    private int m_CurrentHealth;
     
     void OnEnable()
     {
+        m_TowerHealthBar = FindObjectOfType<HealthBar>();
+        m_MaxHealth = 100;
+        m_CurrentHealth = m_MaxHealth;
+        m_TowerHealthBar.SetMaxHealth(m_MaxHealth);
         InvokeRepeating("ShootAtPlayer", 3f, 5f);
     } // OnEnable
 
@@ -85,7 +94,9 @@ public class CanonTower : MonoBehaviour
 
     public void HitByFlame()
     {
-        DebugManager.Instance.Echo("hit by flame!");
+        // DebugManager.Instance.Echo("hit by flame!");
+        m_CurrentHealth -= m_FlameDamage;
+        m_TowerHealthBar.SetHealth(m_CurrentHealth);
     }
 
    

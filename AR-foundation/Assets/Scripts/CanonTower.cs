@@ -8,10 +8,12 @@ public class CanonTower : MonoBehaviour
     // https://www.youtube.com/watch?v=BLfNP4Sc_iA&ab_channel=Brackeys
     [SerializeField] private float m_turnSpeed = 40f;
     [SerializeField] private Rigidbody m_canonBallPrefab;
+    [SerializeField] private ParticleSystem m_MediumFlamesPrefab;
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_shootingForce;
     [SerializeField] private int m_FlameDamage = 1;
-    [SerializeField] private HealthBar m_TowerHealthBar;
+    [SerializeField] private GameObject m_TowerHealthCanvas;
+    private HealthBar m_TowerHealthBar;
   
     private int m_MaxHealth;
     private int m_CurrentHealth;
@@ -95,8 +97,18 @@ public class CanonTower : MonoBehaviour
     public void HitByFlame()
     {
         // DebugManager.Instance.Echo("hit by flame!");
+        if (!m_TowerHealthCanvas.activeSelf)
+        {
+            m_TowerHealthCanvas.SetActive(true);
+        }
+
         m_CurrentHealth -= m_FlameDamage;
         m_TowerHealthBar.SetHealth(m_CurrentHealth);
+        if (m_CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(m_MediumFlamesPrefab, transform.position, transform.rotation);
+        }
     }
 
    

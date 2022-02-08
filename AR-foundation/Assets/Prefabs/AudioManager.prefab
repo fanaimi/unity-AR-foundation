@@ -50,3 +50,39 @@ MonoBehaviour:
     pitch: 0.81
     source: {fileID: 0}
     loop: 0
+  - clip: {fileID: 8300000, guid: 5e6f890b028fa044187ea62a1994f771, type: 3}
+    name: buzz
+    volume: 0.26
+    pitch: 0.81
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: bd198d6403c00ba459bf9ca26e9a45de, type: 3}
+    name: camp-fire
+    volume: 0.734
+    pitch: 2.07
+    source: {fileID: 0}
+    loop: 1
+  - clip: {fileID: 8300000, guid: d34f87047b39df247b7a2e940bf25218, type: 3}
+    name: tower-smash
+    volume: 0.385
+    pitch: 0.71
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 3d85c3aa892c29f439d074d76ee3db7e, type: 3}
+    name: robot-bleep
+    volume: 0.29
+    pitch: 0.71
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 7639adef7b1bd9a448d6a1fcd80a401a, type: 3}
+    name: robot-walk
+    volume: 0.491
+    pitch: 1.16
+    source: {fileID: 0}
+    loop: 1
+  - clip: {fileID: 8300000, guid: 102f0eddb5486fe48b6cfbed45e18134, type: 3}
+    name: flamethrower
+    volume: 0.728
+    pitch: 1.25
+    source: {fileID: 0}
+    loop: 1

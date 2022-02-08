@@ -132,6 +132,14 @@ public class RobotTouchController : MonoBehaviour
         // https://www.youtube.com/results?search_query=unity+flamethrower+particle+effect+
         // DebugManager.Instance.Echo("throwing flames");
         m_ThrowingFlames = !m_ThrowingFlames;
+        if (m_ThrowingFlames)
+        {
+            AudioManager.instance.PlayOnce("flamethrower");
+        }
+        else
+        {
+            AudioManager.instance.Stop("flamethrower");
+        }
     } // ToggleFlames
 
 

@@ -20,10 +20,10 @@ public class CanonTower : MonoBehaviour
     
     void OnEnable()
     {
-        m_TowerHealthBar = FindObjectOfType<HealthBar>();
         m_MaxHealth = 1000;
         m_CurrentHealth = m_MaxHealth;
-        m_TowerHealthBar.SetMaxHealth(m_MaxHealth);
+        // m_TowerHealthBar = FindObjectOfType<HealthBar>();
+        // m_TowerHealthBar.SetMaxHealth(m_MaxHealth);
         InvokeRepeating("ShootAtPlayer", 3f, 5f);
     } // OnEnable
 
@@ -98,8 +98,11 @@ public class CanonTower : MonoBehaviour
     {
         // DebugManager.Instance.Echo("hit by flame!");
         if (!m_TowerHealthCanvas.activeSelf)
+        //if (true)
         {
             m_TowerHealthCanvas.SetActive(true);
+            m_TowerHealthBar = FindObjectOfType<HealthBar>();
+            m_TowerHealthBar.SetMaxHealth(m_MaxHealth);
         }
 
         m_CurrentHealth -= m_FlameDamage;

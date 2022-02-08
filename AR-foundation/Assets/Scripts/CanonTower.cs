@@ -10,7 +10,7 @@ public class CanonTower : MonoBehaviour
     [SerializeField] private Rigidbody m_canonBallPrefab;
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_shootingForce;
-    [SerializeField] private int m_FlameDamage = 5;
+    [SerializeField] private int m_FlameDamage = 1;
     [SerializeField] private HealthBar m_TowerHealthBar;
   
     private int m_MaxHealth;
@@ -19,7 +19,7 @@ public class CanonTower : MonoBehaviour
     void OnEnable()
     {
         m_TowerHealthBar = FindObjectOfType<HealthBar>();
-        m_MaxHealth = 100;
+        m_MaxHealth = 1000;
         m_CurrentHealth = m_MaxHealth;
         m_TowerHealthBar.SetMaxHealth(m_MaxHealth);
         InvokeRepeating("ShootAtPlayer", 3f, 5f);

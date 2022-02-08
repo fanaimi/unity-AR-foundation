@@ -55,6 +55,22 @@ public class AudioManager : MonoBehaviour
     }
     
     
+    public void PlayOnce(string name)
+    {
+        // because of "using System" at the top
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s != null && !s.source.isPlaying)
+        {
+            s.source.Play();
+        }
+        else
+        {
+            Debug.LogWarning($"could not find sound: {name}!");
+        }
+
+    }
+    
+    
     public void Stop(string name)
     {
         // because of "using System" at the top

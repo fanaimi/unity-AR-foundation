@@ -40,6 +40,7 @@ public class RobotTouchController : MonoBehaviour
     // will be triggered when the object is instantiated 
     private void OnEnable()
     {
+        AudioManager.instance.Play("robot-bleep");
         m_joystick = FindObjectOfType<Joystick>();
         m_robotAnim = GetComponent<Animator>();
         m_rb = GetComponent<Rigidbody>();
@@ -74,10 +75,12 @@ public class RobotTouchController : MonoBehaviour
             //Debug.Log(transform.position.y);
             m_rb.AddForce(transform.forward * m_moveSpeed);
             m_robotAnim.SetBool("Walk_Anim", true);
+            AudioManager.instance.PlayOnce("robot-walk");
         }
         else
         {
             m_robotAnim.SetBool("Walk_Anim", false);
+            AudioManager.instance.Stop("robot-walk");
         }
 
         // handling rotation

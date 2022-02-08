@@ -109,8 +109,10 @@ public class CanonTower : MonoBehaviour
         m_TowerHealthBar.SetHealth(m_CurrentHealth);
         if (m_CurrentHealth <= 0)
         {
+            AudioManager.instance.Play("tower-smash");
             Destroy(gameObject);
             Instantiate(m_MediumFlamesPrefab, transform.position, transform.rotation);
+            AudioManager.instance.Play("camp-fie");
         }
     }
 

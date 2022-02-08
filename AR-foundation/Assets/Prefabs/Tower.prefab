@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5050265629486778833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 7881142022294155761}
   - component: {fileID: 7881142022290746067}
   - component: {fileID: 7881142022291722065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower_Top_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 7881142022294122999}
   - component: {fileID: 7881142022290759691}
   - component: {fileID: 7881142022291960397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7881142022294156229}
   - component: {fileID: 7881142022301073205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 7881142022294142589}
   - component: {fileID: 7881142022290763589}
   - component: {fileID: 7881142022291746669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 7881142022294133803}
   - component: {fileID: 5184186772296657491}
   - component: {fileID: 573623421749679480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -376,6 +376,8 @@ MonoBehaviour:
   m_canonBallPrefab: {fileID: 1287036408180652189, guid: 3f2283382f06da84e8c17e7965e6c02e, type: 3}
   m_spawnPoint: {fileID: 5050265629486778833}
   m_shootingForce: 90
+  m_FlameDamage: 5
+  m_TowerHealthBar: {fileID: 0}
 --- !u!65 &573623421749679480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -400,7 +402,7 @@ GameObject:
   - component: {fileID: 7881142022294131939}
   - component: {fileID: 7881142022290711519}
   - component: {fileID: 7881142022291767993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower_Base_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7881142022294120799}
   - component: {fileID: 7881142022301033517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +536,7 @@ GameObject:
   - component: {fileID: 7881142022294152141}
   - component: {fileID: 7881142022290691589}
   - component: {fileID: 7881142022291978173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shield_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}

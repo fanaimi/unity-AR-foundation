@@ -43,6 +43,7 @@ public class CanonTower : MonoBehaviour
     {
         if (GetRobotPlayer())
         {
+            AudioManager.instance.Play("cannon-shot");
             Rigidbody m_canonBall = Instantiate(m_canonBallPrefab, m_spawnPoint.position, m_spawnPoint.rotation);
             m_canonBall.AddForce(m_canonBall.transform.forward * m_shootingForce);
             Destroy(m_canonBall.gameObject, 3f);
